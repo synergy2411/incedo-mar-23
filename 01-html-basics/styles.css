@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+.card {
+  border: 1px grey solid;
+  margin: 0 18%;
+  margin-top: 5%;
+  background-color: rgb(199, 198, 198);
+}
+.card-header {
+  padding: 10px 0;
+  text-align: center;
+  background-color: goldenrod;
+}
+.card-body {
+  margin-top: 10px;
+}
+.card-body .tagline {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+table {
+  margin: 5% 0;
+  width: 80%;
+  padding: 10px;
+}
+.field-label {
+  width: 50%;
+  padding: 10px;
+  text-align: end;
+}
+.field-form-control {
+  width: 50%;
+}
+.form-control {
+  width: 100%;
+  padding: 4px;
+}
