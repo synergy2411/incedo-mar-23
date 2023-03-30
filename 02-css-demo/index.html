@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 100px;
+        height: 100px;
+        border: 1px grey solid;
+        animation-name: my-anim;
+        animation-duration: 4s;
+        animation-iteration-count: 3;
+        animation-timing-function: cubic-bezier(0.16, 0.82, 0.89, 0.35);
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+        animation-direction: reverse;
+        /* animation: my-anim 4s 3 cubic-bezier(0.16, 0.82, 0.89, 0.35) 2s; */
+      }
+
+      @keyframes my-anim {
+        0% {
+          background-color: green;
+          top: 0;
+          left: 0;
+        }
+
+        25% {
+          background-color: blue;
+          transform: translate(200px, 0);
+        }
+
+        50% {
+          background-color: red;
+          transform: translate(200px, 200px);
+        }
+        75% {
+          background-color: gold;
+          transform: translate(0, 200px);
+        }
+        100% {
+          background-color: #fff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>
