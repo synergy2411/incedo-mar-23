@@ -9,5 +9,25 @@
   </head>
   <body>
     <h1>Hello World</h1>
+    <form>
+      <input type="checkbox" value="elated" />Elated <br />
+      <input type="checkbox" value="enthusiatic" />Enthusiatic <br />
+      <button id="btnSubmit">Submit</button>
+    </form>
+
+    <script>
+      const btnSubmit = document.getElementById("btnSubmit");
+      const allCheckboxes = document.querySelectorAll("[type='checkbox']");
+      btnSubmit.addEventListener("click", function (event) {
+        event.preventDefault();
+        let checkboxValues = [];
+        allCheckboxes.forEach(function (checkbox) {
+          if (checkbox.checked) {
+            checkboxValues.push(checkbox.value);
+          }
+        });
+        console.log("SELECTED : ", checkboxValues);
+      });
+    </script>
   </body>
 </html>

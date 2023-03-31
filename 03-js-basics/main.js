@@ -426,17 +426,140 @@ let names = ["john", "jenny", "james", "jack", "jill"]
 // Scope chaining
 
 
-function a() {
+// function a() {
 
-    // let x = 101;
+//     // let x = 101;
 
 
-    function b() {
-        // let x = 99;
-        console.log(x)      // ?
-    }
+//     function b() {
+//         // let x = 99;
+//         console.log(x)      // ?
+//     }
 
-    b();
+//     b();
+// }
+
+// a();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ARROW FUNCTION
+
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+// }
+
+// let foo = new Person("Foo", 32)
+
+
+// function demo() {
+
+//     const numbers = [10, 20, 30, 20, 10];
+//     const newArray = numbers.map(value => value * 2)
+//     console.log(newArray);
+// }
+
+// demo();
+
+
+
+
+// REST/SPREAD
+
+// function demo(email, ...args) {
+//     console.log(args[0])            // ?
+// }
+
+// demo("test@test")
+// demo("test@test", 23)
+// demo("test@test", 23, true)
+
+
+
+// let friends = ["Joe", "Monica"];
+
+// let moreFriends = ["Ross", "Rachel", ...friends];
+
+// console.log(moreFriends);
+
+// // ["Ross", "Rachel", ["Joe", "Monica"]]
+
+
+// let userOne = {
+//     email: "foo@test",
+//     age: 32
+// }
+
+// let userTwo = {
+//     ...userOne,
+//     salary: 20000,
+//     age: 38
+// }
+// console.log(userTwo);           // ?
+
+
+
+
+
+
+// DESTRUCTURING
+
+let fruits = ["Kiwi", "apple", "oranges"];
+
+let [f1, f2, f3, f4, f5] = fruits;
+
+console.log(f2, f4);        // "apple"
+
+
+let user = {
+    name: "john",
+    age: 32,
+    address: {
+        city: "Chennai",
+        street: "201 Main Road, OMR"
+    },
+    friends: ["Foo", "Bar", "Bam"]
 }
 
-a();
+
+let { name: myName, age, address: { city, street }, friends: [fr1, fr2, fr3] } = user;
+
+console.log(myName, city, street, fr1, fr2, fr3);
+
+
+let users = [
+    {
+        email: "test1@test",
+        age: 32
+    },
+    {
+        email: "test2@test",
+        age: 34
+    },
+    {
+        email: "test3@test",
+        age: 36
+    },
+]
+
