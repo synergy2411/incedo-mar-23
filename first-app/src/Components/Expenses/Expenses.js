@@ -23,12 +23,16 @@ const Expenses = () => {
     }]
 
     const [show, setShow] = useState(false)
+    const [selectedYear, setSelectedYear] = useState('2023')
 
     const clickHandler = () => setShow(!show)
 
-    const onYearSelect = (selectedYear) => {
-        console.log("Selected : ", selectedYear)
+    const onYearSelect = (selYear) => {
+        console.log("Selected : ", selYear)
+        setSelectedYear(selYear)
     }
+
+    const filteredExpenses = expenses.filter(exp => exp.createdAt.getFullYear().toString() === selectedYear)
 
     return (
         <div>
@@ -43,14 +47,13 @@ const Expenses = () => {
                     </div>
                 </div>
                 <div className='col-4'>
-                    <ExpenseFilter onYearSelect={onYearSelect} />
+                    <ExpenseFilter onYearSelect={onYearSelect} selectedYear={selectedYear} />
                 </div>
             </div>
             {show && <AddExpense />}
             <div className="row">
-                <ExpenseItem expense={expenses[0]} />
-                <ExpenseItem expense={expenses[1]} />
-                <ExpenseItem expense={expenses[2]} />
+                {filteredExpenses.map(exp => <ExpenseItem expense={exp} />)}
+
             </div>
         </div>
     )
