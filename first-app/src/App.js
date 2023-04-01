@@ -1,12 +1,11 @@
-import Comment from "./Components/Demo/Comment";
-import JsxDemo from "./Components/Demo/JsxDemo";
+import Expenses from "./Components/Expenses/Expenses";
+
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <h1>My First App</h1>
-      <Comment />
-      <JsxDemo />
+      <Expenses />
     </div>
   );
 }

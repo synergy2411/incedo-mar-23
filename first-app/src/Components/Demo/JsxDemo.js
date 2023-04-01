@@ -22,5 +22,3 @@ function JsxDemo() {
 
 export default JsxDemo;
 
-// JSX must have only one root element
-// JSX can't have Javscript reserved keywords eg. class
