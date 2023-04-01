@@ -591,31 +591,42 @@ let names = ["john", "jenny", "james", "jack", "jill"]
 
 
 // Creating Promise
-function buildPromise() {
 
-    let promise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            // resolve({ message: "SUCCESS" })
-            reject(new Error("Something went wrong"))
-        }, 1000)
-    })
-    return promise;
-}
+// function createPromise() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve({ message: "Nested Promise Resolve" })
+//         }, 1500)
+//     })
+// }
+// function buildPromise() {
+
+//     let promise = new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             createPromise()
+//                 .then(response => {
+//                     resolve(response)
+//                 })
+//                 .catch(console.error)
+//         }, 1000)
+//     })
+//     return promise;
+// }
 
 
-// Consume Promise
-// - .then().catch()
-// - Async...await Code
+// // Consume Promise
+// // - .then().catch()
+// // - Async...await Code
 
 
-async function consumePromise() {
-    try {
-        const response = await buildPromise();
-        console.log(response)
-    } catch (err) {
-        console.log(err)
-    }
-}
+// async function consumePromise() {
+//     try {
+//         const response = await buildPromise();
+//         console.log(response)
+//     } catch (err) {
+//         console.log(err)
+//     }
+// }
 
 
 // function consumePromise() {
@@ -624,4 +635,45 @@ async function consumePromise() {
 //         .catch(err => console.log(err))
 // }
 
-consumePromise();
+// consumePromise();
+
+
+
+// FETCH API
+// - we can make AJAX Calls / Remote Server Calls
+// - GET, POST, PATCH, DELETE, PUT etc
+// - return promise
+
+// https://jsonplaceholder.typicode.com/todos 
+
+
+async function getTitle() {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/todos")
+        const result = await response.json();
+        result.forEach(element => {
+            const li = document.createElement("li")
+            li.innerHTML = element.title;
+            document.body.appendChild(li)
+        });
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+
+
+// function getData() {
+//     fetch("https://jsonplaceholder.typicode.com/photos")
+//         .then(response => response.json())
+//         .then(result => {
+//             result.forEach(item => {
+//                 const imgEl = document.createElement("img")
+//                 imgEl.src = item["thumbnailUrl"]
+//                 document.body.appendChild(imgEl)
+//             })
+//         })
+//         .catch(console.error)
+// }
+
+// getData()
