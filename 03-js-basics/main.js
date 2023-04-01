@@ -337,7 +337,7 @@ let names = ["john", "jenny", "james", "jack", "jill"]
 // console.log(employees[pos].name.concat(" Doe"))
 
 
-// // - remove employee having name as "Jenny" 
+// // - remove employee having name as "Jenny"
 // const position = employees.findIndex(function (emp) {
 //     return emp.name === "Jenny"
 // })
@@ -525,41 +525,103 @@ let names = ["john", "jenny", "james", "jack", "jill"]
 
 // DESTRUCTURING
 
-let fruits = ["Kiwi", "apple", "oranges"];
+// let fruits = ["Kiwi", "apple", "oranges"];
 
-let [f1, f2, f3, f4, f5] = fruits;
+// let [f1, f2, f3, f4, f5] = fruits;
 
-console.log(f2, f4);        // "apple"
+// console.log(f2, f4);        // "apple"
 
 
-let user = {
-    name: "john",
-    age: 32,
-    address: {
-        city: "Chennai",
-        street: "201 Main Road, OMR"
-    },
-    friends: ["Foo", "Bar", "Bam"]
+// let user = {
+//     name: "john",
+//     age: 32,
+//     address: {
+//         city: "Chennai",
+//         street: "201 Main Road, OMR"
+//     },
+//     friends: ["Foo", "Bar", "Bam"]
+// }
+
+
+// let { name: myName, age, address: { city, street }, friends: [fr1, fr2, fr3] } = user;
+
+// console.log(myName, city, street, fr1, fr2, fr3);
+
+
+// let users = [
+//     {
+//         email: "test1@test",
+//         age: 32
+//     },
+//     {
+//         email: "test2@test",
+//         age: 34
+//     },
+//     {
+//         email: "test3@test",
+//         age: 36
+//     },
+// ]
+
+
+// let [{ email: e1, age: a1 }, { email: e2, age: a2 }, { email: e3, age: a3 }] = users;
+
+// console.log(e1, e2, e3, a1, a2, a3);
+
+
+// Sync Code
+// console.log("START")
+
+// alert("Who's this?")
+
+// console.log("END")
+
+
+
+// Async Code
+
+// console.log("START");
+
+// setTimeout(() => {
+//     alert("Hello World!")
+// }, 0)
+
+// console.log("END");
+
+
+
+// Creating Promise
+function buildPromise() {
+
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // resolve({ message: "SUCCESS" })
+            reject(new Error("Something went wrong"))
+        }, 1000)
+    })
+    return promise;
 }
 
 
-let { name: myName, age, address: { city, street }, friends: [fr1, fr2, fr3] } = user;
+// Consume Promise
+// - .then().catch()
+// - Async...await Code
 
-console.log(myName, city, street, fr1, fr2, fr3);
+
+async function consumePromise() {
+    try {
+        const response = await buildPromise();
+        console.log(response)
+    } catch (err) {
+        console.log(err)
+    }
+}
 
 
-let users = [
-    {
-        email: "test1@test",
-        age: 32
-    },
-    {
-        email: "test2@test",
-        age: 34
-    },
-    {
-        email: "test3@test",
-        age: 36
-    },
-]
+// function consumePromise() {
+//     buildPromise()
+//         .then(response => console.log("RESPONSE : ", response))
+//         .catch(err => console.log(err))
+// }
 
+consumePromise();
