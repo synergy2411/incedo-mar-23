@@ -1,5 +1,6 @@
-const ExpenseItem = (props) => {
+import ExpenseDate from "../ExpenseDate/ExpenseDate";
 
+const ExpenseItem = (props) => {
     return (
         <div className="col-4">
             <div className="card">
@@ -9,8 +10,8 @@ const ExpenseItem = (props) => {
                 </div>
                 <div className="card-body">
                     <p>Amount : ${props.expense.amount}</p>
-                    <p>Date : {props.expense.createdAt.toString()}</p>
-
+                    {/* <p>Date : {props.expense.createdAt.toString()}</p> */}
+                    <ExpenseDate createdAt={props.expense.createdAt} />
                 </div>
             </div>
         </div>
