@@ -32,7 +32,8 @@ const Expenses = () => {
         setSelectedYear(selYear)
     }
 
-    const filteredExpenses = expenses.filter(exp => exp.createdAt.getFullYear().toString() === selectedYear)
+    const filteredExpenses = expenses.filter(exp =>
+        exp.createdAt.getFullYear().toString() === selectedYear)
 
     return (
         <div>
@@ -47,7 +48,8 @@ const Expenses = () => {
                     </div>
                 </div>
                 <div className='col-4'>
-                    <ExpenseFilter onYearSelect={onYearSelect} selectedYear={selectedYear} />
+                    <ExpenseFilter onYearSelect={onYearSelect}
+                        selectedYear={selectedYear} />
                 </div>
             </div>
             {show && <AddExpense />}
