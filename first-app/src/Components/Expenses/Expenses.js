@@ -1,30 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter/ExpenseFilter";
 import AddExpense from "./AddExpense/AddExpense";
 
-const INTIAL_EXPENSES = [{
-    id: "e001",
-    title: "shopping",
-    amount: 12.99,
-    createdAt: new Date("Dec 21, 2022")
-}, {
-    id: "e002",
-    title: "planting",
-    amount: 10.9,
-    createdAt: new Date("Jan 1, 2023")
-}, {
-    id: "e003",
-    title: "grocery",
-    amount: 29.9,
-    createdAt: new Date("Mar 20, 2023")
-}]
+
 
 const Expenses = () => {
 
-    const [expenses, setExpenses] = useState(INTIAL_EXPENSES)
+    const [expenses, setExpenses] = useState([])
     const [show, setShow] = useState(false)
     const [selectedYear, setSelectedYear] = useState('2023')
+
+    useEffect(() => {
+        fetch("http://localhost:3030/expenses")
+            .then(response => response.json())
+            .then(result => {
+                setExpenses(result.map(exp => {
+                    return { ...exp, createdAt: new Date(exp.createdAt) }
+                }))
+
+            }).catch(console.error)
+    }, [])
 
     const clickHandler = () => setShow(!show)
 

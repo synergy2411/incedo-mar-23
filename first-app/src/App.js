@@ -7,8 +7,8 @@ function App() {
 
   return (
     <div className="container">
-      <UseEffectDemo />
-      {/* <Expenses /> */}
+      {/* <UseEffectDemo /> */}
+      <Expenses />
       {/* <button onClick={() => setToggle(!toggle)}>Toggle</button>
       {toggle && <Comment />} */}
     </div>

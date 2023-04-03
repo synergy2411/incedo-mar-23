@@ -506,17 +506,17 @@ let names = ["john", "jenny", "james", "jack", "jill"]
 // // ["Ross", "Rachel", ["Joe", "Monica"]]
 
 
-// let userOne = {
-//     email: "foo@test",
-//     age: 32
-// }
+let userOne = {
+    email: "foo@test",
+    age: 32
+}
 
-// let userTwo = {
-//     ...userOne,
-//     salary: 20000,
-//     age: 38
-// }
-// console.log(userTwo);           // ?
+let userTwo = {
+    ...userOne,
+    salary: 20000,
+    age: 38
+}
+console.log(userTwo);           // {email : "foo@test", salary: 20000, age : 38}
 
 
 
