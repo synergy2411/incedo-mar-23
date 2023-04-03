@@ -1,6 +1,5 @@
-import UseEffectDemo from "./Components/Demo/UseEffectDemo";
-import Expenses from "./Components/Expenses/Expenses";
 import JsxDemo from './Components/Demo/JsxDemo';
+import MemoParent from './Components/Demo/MemoParent';
 
 function App() {
 
@@ -11,7 +10,8 @@ function App() {
       {/* <Expenses /> */}
       {/* <button onClick={() => setToggle(!toggle)}>Toggle</button>
       {toggle && <Comment />} */}
-      <JsxDemo />
+      {/* <JsxDemo /> */}
+      <MemoParent />
     </div>
   );
 }

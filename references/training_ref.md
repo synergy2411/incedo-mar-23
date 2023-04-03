@@ -37,3 +37,7 @@
   > before the callback is fired, the Cleanup will fire.
   > cb will run whenever the mentioned dependencies will change
   > cleanUp will also fire when the component is about to destory (componentWillUnmount)
+
+# Memorization : to remember
+
+# Memoization : to store
