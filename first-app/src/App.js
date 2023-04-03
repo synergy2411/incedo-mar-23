@@ -1,4 +1,4 @@
-
+import Comment from './Components/Demo/Comment';
 import Expenses from "./Components/Expenses/Expenses";
 
 
@@ -7,7 +7,8 @@ function App() {
 
   return (
     <div className="container">
-      <Expenses />
+      {/* <Expenses /> */}
+      <Comment />
     </div>
   );
 }

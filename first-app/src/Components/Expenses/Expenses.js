@@ -28,7 +28,6 @@ const Expenses = () => {
     const clickHandler = () => setShow(!show)
 
     const onYearSelect = (selYear) => {
-        console.log("Selected : ", selYear)
         setSelectedYear(selYear)
     }
 
@@ -39,7 +38,7 @@ const Expenses = () => {
         <div>
             <h1 className="text-center">My Expenses App</h1>
 
-            <div className='row'>
+            <div className='row mb-3'>
                 <div className='col-4 offset-4'>
                     <div className='d-grid'>
                         <button className="btn btn-secondary" onClick={clickHandler}>
