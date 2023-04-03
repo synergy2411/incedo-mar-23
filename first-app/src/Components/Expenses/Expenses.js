@@ -22,7 +22,6 @@ const INTIAL_EXPENSES = [{
 
 const Expenses = () => {
 
-
     const [expenses, setExpenses] = useState(INTIAL_EXPENSES)
     const [show, setShow] = useState(false)
     const [selectedYear, setSelectedYear] = useState('2023')
@@ -36,6 +35,7 @@ const Expenses = () => {
     const onAddNewExpense = (newExpense) => {
         // Use function in SetState method when next state is depend upon previous state
         setExpenses((prevState) => [newExpense, ...prevState])
+        setShow(false);
     }
 
     const filteredExpenses = expenses.filter(exp =>
