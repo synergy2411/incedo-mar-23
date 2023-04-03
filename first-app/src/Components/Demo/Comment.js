@@ -20,6 +20,14 @@ class Comment extends React.Component {
         return rnd > 5;
     }
 
+    componentDidUpdate() {
+        console.log("COMPONENT DID UPDATE");
+    }
+
+    componentWillUnmount() {
+        console.log("COMPONENT WILL UNMOUNT");
+    }
+
     countIncreaseHandler = () => this.setState({ count: this.state.count + 1 })
 
     render() {

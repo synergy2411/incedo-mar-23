@@ -1,4 +1,3 @@
-import Comment from './Components/Demo/Comment';
 import Expenses from "./Components/Expenses/Expenses";
 
 
@@ -7,8 +6,9 @@ function App() {
 
   return (
     <div className="container">
-      {/* <Expenses /> */}
-      <Comment />
+      <Expenses />
+      {/* <button onClick={() => setToggle(!toggle)}>Toggle</button>
+      {toggle && <Comment />} */}
     </div>
   );
 }
