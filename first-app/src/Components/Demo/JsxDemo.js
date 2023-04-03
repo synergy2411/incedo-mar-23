@@ -1,4 +1,6 @@
-function JsxDemo() {
+import Hoc from "./Hoc";
+
+function JsxDemo(props) {
 
     let username = "John Doe";
     let age = 32;
@@ -14,11 +16,18 @@ function JsxDemo() {
             <p>Age : {age} </p>
             <p>Email : {user.email} </p>
             <p>User is {isAdmin ? '' : 'NOT'} Admin.</p>
+            <p>Company : {props.companyName}</p>
             <button onClick={clickHandler}>Click Me</button>
+
+            <h6> Counter : {props.counter} </h6>
+            <button onClick={() => props.increaseCounter()}>
+                Increase
+            </button>
         </>
     )
 
 }
 
-export default JsxDemo;
+const EnhancedComponent = Hoc(JsxDemo)
+export default EnhancedComponent;
 

@@ -3,8 +3,6 @@ import ExpenseItem from "./ExpenseItem/ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter/ExpenseFilter";
 import AddExpense from "./AddExpense/AddExpense";
 
-
-
 const Expenses = () => {
 
     const [expenses, setExpenses] = useState([])
@@ -29,9 +27,18 @@ const Expenses = () => {
     }
 
     const onAddNewExpense = (newExpense) => {
-        // Use function in SetState method when next state is depend upon previous state
-        setExpenses((prevState) => [newExpense, ...prevState])
-        setShow(false);
+        fetch("http://localhost:3030/expenses", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newExpense)
+        }).then(response => response.json())
+            .then(result => {
+                // Use function in SetState method when next state is depend upon previous state
+                setExpenses((prevState) => [newExpense, ...prevState])
+                setShow(false);
+            }).catch(console.error)
     }
 
     const filteredExpenses = expenses.filter(exp =>
