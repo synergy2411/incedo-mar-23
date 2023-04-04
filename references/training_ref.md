@@ -41,3 +41,20 @@
 # Memorization : to remember
 
 # Memoization : to store
+
+# Context API solves the problem of Prop drilling
+
+- Prop drilling is sending the props to all the level in component branch
+- Context API is NOT highly optimized for data which is frequently changing/ huge amount of data
+
+# State Management
+
+- Component Level : useState(), this.state
+- Component Branch Level : Context API / Redux Pattern
+- App Level : Redux Pattern
+
+function xyz(prevState, action){
+return nextState;
+}
+
+(prevState, action) => nextState

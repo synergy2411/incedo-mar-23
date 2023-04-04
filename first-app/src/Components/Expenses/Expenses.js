@@ -46,8 +46,7 @@ const Expenses = () => {
         exp.createdAt.getFullYear().toString() === selectedYear)
 
     return (
-        <AuthContext.Provider value={{ isLoggedIn: false }}>
-
+        <AuthContext.Provider value={{ isLoggedIn: true }}>
             <h1 className="text-center">My Expenses App</h1>
 
             <div className='row mb-3'>
