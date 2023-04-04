@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter/ExpenseFilter";
 import AddExpense from "./AddExpense/AddExpense";
+import AuthContext from "../../context/auth-context";
 
 const Expenses = () => {
 
@@ -45,7 +46,8 @@ const Expenses = () => {
         exp.createdAt.getFullYear().toString() === selectedYear)
 
     return (
-        <div>
+        <AuthContext.Provider value={{ isLoggedIn: false }}>
+
             <h1 className="text-center">My Expenses App</h1>
 
             <div className='row mb-3'>
@@ -67,7 +69,7 @@ const Expenses = () => {
             <div className="row">
                 {filteredExpenses.map(exp => <ExpenseItem key={exp.id} expense={exp} />)}
             </div>
-        </div>
+        </AuthContext.Provider>
     )
 }
 

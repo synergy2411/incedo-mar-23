@@ -14,3 +14,5 @@ export default React.memo(MemoChild);
 
 
 // prevProps.toggle === currProps.toggle -> true => No need to re-render the component
+
+// React.memo() does Not check for Referential Equality
