@@ -24,5 +24,12 @@
       "amount": 13.3,
       "createdAt": "2022-12-20T00:00:00.000Z"
     }
+  ],
+  "todos": [
+    {
+      "id": "c73c0972-8e69-472f-9832-dcb63edc0dbf",
+      "label": "shopping",
+      "status": false
+    }
   ]
 }

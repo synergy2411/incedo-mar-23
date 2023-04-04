@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
-import { add, remove } from '../../store/reducers/todo-slice';
+import { add, remove, fetchTodos } from '../../store/reducers/todo-slice';
 
 const Todos = () => {
 
     const [enteredLabel, setEnteredLabel] = useState('')
     const dispatch = useDispatch()
 
-    const { todos } = useSelector(store => store.todoReducer)
+    useEffect(() => {
+        dispatch(fetchTodos());
+    }, [dispatch])
+
+    const { todos, loading, error } = useSelector(store => store.todoReducer)
 
     const addClickHandler = () => {
         let todo = {
@@ -20,6 +24,14 @@ const Todos = () => {
     }
 
     const deleteHandler = (todoId) => dispatch(remove(todoId))
+
+    if (loading) {
+        return <p className='display-3'>Still Loading...</p>
+    }
+
+    if (error) {
+        return error;
+    }
 
     return (
         <>
@@ -41,8 +53,10 @@ const Todos = () => {
                         <ul className='list-group'>
                             {todos.map(todo =>
                                 <li className='list-group-item mb-3' key={todo.id}>
-                                    {todo.label.toUpperCase()}
-                                    <button onClick={() => deleteHandler(todo.id)} className='btn btn-light'>❌</button>
+                                    <div className='d-flex justify-content-between'>
+                                        <p>{todo.label.toUpperCase()}</p>
+                                        <button onClick={() => deleteHandler(todo.id)} className='btn btn-danger btn-sm'>❌</button>
+                                    </div>
                                 </li>)}
                         </ul>
                     </div>
