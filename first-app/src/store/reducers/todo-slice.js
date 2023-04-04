@@ -9,11 +9,11 @@ const todoSlice = createSlice({
     initialState: initialState,
     reducers: {
         add: (state, action) => {
-            console.log("ACTION : ", action)
             state.todos.push(action.payload)
         },
         remove: (state, action) => {
-            state.todos.splice(action.payload, 1)
+            const position = state.todos.findIndex(todo => todo.id === action.payload)
+            state.todos.splice(position, 1)
         }
     }
 })

@@ -8,10 +8,7 @@ const Todos = () => {
     const [enteredLabel, setEnteredLabel] = useState('')
     const dispatch = useDispatch()
 
-    const { todos } = useSelector(store => {
-        // console.log("STORE : ", store);
-        return store.todoReducer
-    })
+    const { todos } = useSelector(store => store.todoReducer)
 
     const addClickHandler = () => {
         let todo = {
@@ -19,15 +16,15 @@ const Todos = () => {
             label: enteredLabel,
             status: false
         }
-        console.log(todo);
         dispatch(add(todo))
     }
+
+    const deleteHandler = (todoId) => dispatch(remove(todoId))
 
     return (
         <>
             <h3 className='display-4 text-center'>My Todos</h3>
-
-            <div className='row'>
+            <div className='row mb-4'>
                 <div className='col-6 offset-2'>
                     <input type="text" className='form-control'
                         placeholder='enter todo label' value={enteredLabel}
@@ -42,7 +39,11 @@ const Todos = () => {
                 todos.length > 0 && <div className='row'>
                     <div className='col-6 offset-3'>
                         <ul className='list-group'>
-                            {todos.map(todo => <li className='list-group-item mb-3' key={todo.id}>{todo.label}</li>)}
+                            {todos.map(todo =>
+                                <li className='list-group-item mb-3' key={todo.id}>
+                                    {todo.label.toUpperCase()}
+                                    <button onClick={() => deleteHandler(todo.id)} className='btn btn-light'>❌</button>
+                                </li>)}
                         </ul>
                     </div>
                 </div>
