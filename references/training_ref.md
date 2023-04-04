@@ -58,3 +58,11 @@ return nextState;
 }
 
 (prevState, action) => nextState
+
+store = {
+counter : 0,
+result : []
+
+}
+
+# npm i @reduxjs/toolkit react-redux
