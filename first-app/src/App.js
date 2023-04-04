@@ -1,14 +1,12 @@
-import JsxDemo from './Components/Demo/JsxDemo';
-import MemoParent from './Components/Demo/MemoParent';
-import Expenses from './Components/Expenses/Expenses';
-import Todos from './Components/Todos/Todos';
+import Auth from './Components/Auth/Auth';
 
 function App() {
 
 
   return (
     <div className="container">
-      <Todos />
+      <Auth />
+      {/* <Todos /> */}
       {/* <UseEffectDemo /> */}
       {/* <Expenses /> */}
       {/* <button onClick={() => setToggle(!toggle)}>Toggle</button>

@@ -31,5 +31,27 @@
       "label": "shopping",
       "status": false
     }
+  ],
+  "users": [
+    {
+      "email": "john@test",
+      "password": "john123",
+      "id": 1
+    },
+    {
+      "email": "foo@test",
+      "password": "foo13",
+      "id": 2
+    },
+    {
+      "email": "bar@test",
+      "password": "bar123",
+      "id": 3
+    },
+    {
+      "email": "hi@test",
+      "password": "hi123",
+      "id": 4
+    }
   ]
 }
