@@ -12,26 +12,29 @@ const Auth = () => {
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
 
-    useEffect(() => {
-        if (localStorage.getItem("token")) {
-            navigate("/expenses")
-        }
-    }, [navigate, token]);
+    // useEffect(() => {
+    //     if (localStorage.getItem("token")) {
+    //         navigate("/expenses")
+    //     }
+    // }, [navigate, token]);
 
 
     const registerClickHandler = (event) => {
         event.preventDefault()
-        console.log(email, password);
         dispatch(userRegister({ email, password }))
-
+        navigate("/expenses")
     }
 
     const loginClickHandler = event => {
         event.preventDefault();
-        console.log(email, password);
         dispatch(userLogin({ email, password }))
+        setTimeout(() => {
+
+            navigate("/expenses")
+        }, 1000)
 
     }
+
 
     if (token) {
         localStorage.setItem("token", token)

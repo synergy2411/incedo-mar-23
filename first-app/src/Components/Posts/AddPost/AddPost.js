@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./AddPost.css";
 
 const AddPost = () => {
     const titleInputRef = useRef()
@@ -22,8 +23,8 @@ const AddPost = () => {
         navigate("/posts?added=true")
     }
     return (
-        <div className='row'>
-            <div className='col-6 offset-3'>
+        <div className='backdrop'>
+            <div className='msg-dialog'>
                 <div className='card'>
                     <div className='card-header'>
                         <h6 className='text-center'>Add New Post Form</h6>
@@ -49,6 +50,7 @@ const AddPost = () => {
                 </div>
             </div>
         </div>
+
     );
 }
 

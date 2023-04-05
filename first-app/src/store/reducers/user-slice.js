@@ -15,7 +15,6 @@ export const userLogin = createAsyncThunk("users/login",
     async ({ email, password }) => {
         const response = await axios.get(`http://localhost:3030/users?email=${email}&password=${password}`)
         const [foundUser] = await response.data;
-        console.log("FOUND USER : ", foundUser);
         if (!foundUser) {
             throw new Error("Unable to find the user")
         }
