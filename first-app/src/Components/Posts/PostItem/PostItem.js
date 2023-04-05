@@ -15,8 +15,7 @@ const PostItem = () => {
     }, [postId])
 
     const deleteClickHandler = async () => {
-        const response = await axios.delete(`http://localhost:3030/posts/${post.id}`);
-        console.log(response.data);
+        await axios.delete(`http://localhost:3030/posts/${post.id}`);
         navigate("/posts?delete=true")
     }
 
