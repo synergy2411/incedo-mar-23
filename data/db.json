@@ -74,6 +74,21 @@
       "id": "p001",
       "title": "React",
       "body": "Awesome React Course"
+    },
+    {
+      "title": "Angular",
+      "body": "great framework",
+      "id": "AGMsf7w"
+    },
+    {
+      "title": "NodeJS",
+      "body": "server side javascript",
+      "id": "Sg8e-P3"
+    },
+    {
+      "title": "vuejs",
+      "body": "emerging framework",
+      "id": "aGZPLnm"
     }
   ]
 }

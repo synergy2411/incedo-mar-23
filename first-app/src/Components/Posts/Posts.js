@@ -34,6 +34,7 @@ const Posts = () => {
 
     const query = new URLSearchParams(location.search);
     const isDeleted = query.get("delete")
+    const isAdded = query.get("added")
     const isAscending = query.get("order") === 'asc'
 
     useEffect(() => {
@@ -41,7 +42,7 @@ const Posts = () => {
             .then(response => {
                 setPosts(response.data)
             }).catch(console.error)
-    }, [isDeleted])
+    }, [isDeleted, isAdded])
 
     const navigate = useNavigate()
     const postSelectHandler = (postId) => {
@@ -60,6 +61,12 @@ const Posts = () => {
                         <button className='btn btn-dark'
                             onClick={() => navigate(`/posts?order=${isAscending ? "desc" : "asc"}`)}>
                             Sort {isAscending ? 'Decending' : 'Ascending'} </button>
+                    </div>
+                </div>
+                <div className="col-4">
+                    <div className='d-grid'>
+                        <button className='btn btn-warning'
+                            onClick={() => navigate("/posts/add-post")}>Add Post</button>
                     </div>
                 </div>
             </div>

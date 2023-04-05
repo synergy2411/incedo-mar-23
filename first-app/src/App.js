@@ -6,6 +6,7 @@ import Header from './Components/Header/Header';
 // import Posts from './Components/Posts/Posts';
 // import PostItem from './Components/Posts/PostItem/PostItem';
 import React, { Suspense } from 'react';
+import AddPost from './Components/Posts/AddPost/AddPost';
 
 const Auth = React.lazy(() => import("./Components/Auth/Auth"))
 const Expenses = React.lazy(() => import('./Components/Expenses/Expenses'))
@@ -26,6 +27,7 @@ function App() {
           <Route path={"/expenses"} element={<Expenses />} />
           <Route path={"/posts/*"} element={<Posts />}>
             <Route path=':postId' element={<PostItem />} />
+            <Route path='add-post' element={<AddPost />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
