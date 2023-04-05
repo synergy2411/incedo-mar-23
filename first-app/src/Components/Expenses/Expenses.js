@@ -3,14 +3,22 @@ import ExpenseItem from "./ExpenseItem/ExpenseItem";
 import ExpenseFilter from "./ExpenseFilter/ExpenseFilter";
 import AddExpense from "./AddExpense/AddExpense";
 import AuthContext from "../../context/auth-context";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Expenses = () => {
 
     const [expenses, setExpenses] = useState([])
     const [show, setShow] = useState(false)
     const [selectedYear, setSelectedYear] = useState('2023')
+    const { token } = useSelector(store => store.userReducer)
+
+    const navigate = useNavigate()
 
     useEffect(() => {
+        if (!token) {
+            return navigate("/auth")
+        }
         fetch("http://localhost:3030/expenses")
             .then(response => response.json())
             .then(result => {
@@ -19,7 +27,7 @@ const Expenses = () => {
                 }))
 
             }).catch(console.error)
-    }, [])
+    }, [token, navigate])
 
     const clickHandler = () => setShow(!show)
 
