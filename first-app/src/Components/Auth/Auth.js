@@ -44,8 +44,8 @@ const Auth = () => {
                         <h5 className='text-center'>Login / Register Form</h5>
                         {loading && <p>Loading....</p>}
                         {error && error}
-                        {messageRegister.length > 0 && <p>{userEmail} is registerd successfully</p>}
-                        {messageLogin.length > 0 && <p>{userEmail} is Logged-in successfully</p>}
+                        {/* {messageRegister.length > 0 && <p>{userEmail} is registerd successfully</p>}
+                        {messageLogin.length > 0 && <p>{userEmail} is Logged-in successfully</p>} */}
                         <form>
                             {/* email */}
                             <div className='form-group mb-3'>
