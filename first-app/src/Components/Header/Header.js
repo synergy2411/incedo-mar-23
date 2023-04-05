@@ -28,6 +28,9 @@ const Header = () => {
                             <li className='nav-item'>
                                 <NavLink className="nav-link" to="/todos">Todos</NavLink>
                             </li>
+                            <li className='nav-item'>
+                                <NavLink className="nav-link" to="/posts">Posts</NavLink>
+                            </li>
                             {token && <li className='nav-item'>
                                 <NavLink className="nav-link" to="/expenses">Expenses</NavLink>
                             </li>}

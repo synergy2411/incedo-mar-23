@@ -41,13 +41,13 @@ const userSlice = createSlice({
     reducers: {
         onLogout: (state, action) => {
             state.token = null;
+            state.messageLogin = "";
+            state.userEmail = "";
         }
     },
     extraReducers: (builder) => {
         builder.addCase(userLogin.pending, (state, action) => {
             state.loading = true;
-            state.messageLogin = "";
-            state.userEmail = "";
         })
         builder.addCase(userLogin.fulfilled, (state, action) => {
             state.userEmail = action.payload.email;
