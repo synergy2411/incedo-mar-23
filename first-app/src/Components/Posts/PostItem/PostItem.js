@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import "./PostItem.css";
 
 const PostItem = () => {
     const { postId } = useParams();
     const [post, setPost] = useState()
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get(`http://localhost:3030/posts/${postId}`)
@@ -13,20 +14,38 @@ const PostItem = () => {
             .catch(console.error)
     }, [postId])
 
-    if (!post) {
-        return <p>Loading...</p>
+    const deleteClickHandler = async () => {
+        const response = await axios.delete(`http://localhost:3030/posts/${post.id}`);
+        console.log(response.data);
+        navigate("/posts?delete=true")
     }
+
     return (
         <div className='backdrop'>
             <div className='msg-dialog'>
-                <div className='card'>
+                {!post && <p>Loading...</p>}
+                {post && <div className='card'>
                     <div className='card-header'>
                         <h6 className='text-center'>{post.title.toUpperCase()}</h6>
                     </div>
                     <div className='card-body'>
                         <p>{post.body}</p>
+                        <div className='row'>
+                            <div className='col-6'>
+                                <div className='d-grid'>
+                                    <button className='btn btn-dark'
+                                        onClick={() => navigate("/posts")}>Close</button>
+                                </div>
+                            </div>
+                            <div className='col-6'>
+                                <div className='d-grid'>
+                                    <button className='btn btn-danger'
+                                        onClick={deleteClickHandler}>Delete</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div>}
             </div>
         </div>
     );

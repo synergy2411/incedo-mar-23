@@ -78,3 +78,19 @@ result : []
 
 - Configure BrowserRouter for React App
 - Configure the Components according to the Routes/URL present in browser
+
+{
+"id": "p001",
+"title": "React",
+"body": "Awesome React Course"
+},
+{
+"id": "p002",
+"title": "Mastering React",
+"body": "I like 👍 this course"
+},
+{
+"id": "p003",
+"title": "React for Beginners",
+"body": "Not so bad"
+}

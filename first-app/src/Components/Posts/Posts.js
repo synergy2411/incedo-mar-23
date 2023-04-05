@@ -1,18 +1,22 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import "./Posts.css";
 
 const Posts = () => {
     const [posts, setPosts] = useState([])
+    const location = useLocation();
+
+    const query = new URLSearchParams(location.search);
+    const isDeleted = query.get("delete")
 
     useEffect(() => {
         axios.get("http://localhost:3030/posts")
             .then(response => {
                 setPosts(response.data)
             }).catch(console.error)
-    }, [])
+    }, [isDeleted])
 
     const navigate = useNavigate()
     const postSelectHandler = (postId) => {

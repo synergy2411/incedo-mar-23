@@ -13,7 +13,7 @@
   left: 30vw;
   top: 20vh;
   width: 40vw;
-  height: 30vh;
+  /* height: 30vh; */
   z-index: 70%;
   background-color: #fff;
 }
