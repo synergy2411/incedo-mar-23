@@ -62,6 +62,11 @@
       "email": "baz@test",
       "password": "baz123",
       "id": 6
+    },
+    {
+      "email": "xyz@test",
+      "password": "xyz123",
+      "id": 7
     }
   ]
 }

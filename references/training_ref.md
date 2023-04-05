@@ -66,3 +66,15 @@ result : []
 }
 
 # npm i @reduxjs/toolkit react-redux
+
+# SPA (Single Page Application)
+
+- There will be one and only one page will be rendered.
+- Rendered Page will not reload / refresh in the browser.
+- Content of the single page will change dynamically.
+- Complete App is rendered on the browser in one go.
+
+# npm i react-router-dom
+
+- Configure BrowserRouter for React App
+- Configure the Components according to the Routes

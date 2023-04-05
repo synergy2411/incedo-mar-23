@@ -1,12 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { v4 } from 'uuid';
 
 const initialState = {
     loading: false,
     messageRegister: "",
     messageLogin: "",
     error: null,
-    userEmail: ""
+    userEmail: "",
+    token: null
 }
 
 export const userLogin = createAsyncThunk("users/login",
@@ -46,6 +48,7 @@ const userSlice = createSlice({
             state.userEmail = action.payload.email;
             state.loading = false;
             state.messageLogin = "SUCCESS"
+            state.token = v4()
         })
         builder.addCase(userLogin.rejected, (state, action) => {
             console.log("ERROR ACTION : ", action);
@@ -60,6 +63,7 @@ const userSlice = createSlice({
             state.loading = false
             state.messageRegister = "SUCEESS"
             state.userEmail = action.payload.email
+            state.token = v4()
         })
         builder.addCase(userRegister.rejected, (state, action) => {
             state.loading = false

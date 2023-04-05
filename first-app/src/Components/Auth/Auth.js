@@ -4,7 +4,7 @@ import { userRegister, userLogin } from '../../store/reducers/user-slice';
 
 const Auth = () => {
 
-    const { loading, messageLogin, messageRegister, error, userEmail } = useSelector(store => store.userReducer)
+    const { loading, messageLogin, messageRegister, error, userEmail, token } = useSelector(store => store.userReducer)
 
     const dispatch = useDispatch()
     const [email, setEmail] = useState("")
@@ -14,12 +14,18 @@ const Auth = () => {
         event.preventDefault()
         console.log(email, password);
         dispatch(userRegister({ email, password }))
+
     }
 
     const loginClickHandler = event => {
         event.preventDefault();
         console.log(email, password);
         dispatch(userLogin({ email, password }))
+
+    }
+
+    if (token) {
+        localStorage.setItem("token", token)
     }
     return (
         <div className='row'>
