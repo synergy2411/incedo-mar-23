@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
 import { userRegister, userLogin } from '../../store/reducers/user-slice';
 
 const Auth = () => {
@@ -9,6 +10,14 @@ const Auth = () => {
     const dispatch = useDispatch()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (localStorage.getItem("token")) {
+            navigate("/expenses")
+        }
+    }, [navigate, token]);
+
 
     const registerClickHandler = (event) => {
         event.preventDefault()
