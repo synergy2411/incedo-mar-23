@@ -77,4 +77,4 @@ result : []
 # npm i react-router-dom
 
 - Configure BrowserRouter for React App
-- Configure the Components according to the Routes
+- Configure the Components according to the Routes/URL present in browser
