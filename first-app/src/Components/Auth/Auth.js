@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { userRegister } from '../../store/reducers/user-slice';
+import { userRegister, userLogin } from '../../store/reducers/user-slice';
 
 const Auth = () => {
 
-    const { loading, message, error, userEmail } = useSelector(store => store.userReducer)
+    const { loading, messageLogin, messageRegister, error, userEmail } = useSelector(store => store.userReducer)
 
     const dispatch = useDispatch()
     const [email, setEmail] = useState("")
@@ -15,6 +15,12 @@ const Auth = () => {
         console.log(email, password);
         dispatch(userRegister({ email, password }))
     }
+
+    const loginClickHandler = event => {
+        event.preventDefault();
+        console.log(email, password);
+        dispatch(userLogin({ email, password }))
+    }
     return (
         <div className='row'>
             <div className='col-6 offset-3'>
@@ -23,7 +29,8 @@ const Auth = () => {
                         <h5 className='text-center'>Login / Register Form</h5>
                         {loading && <p>Loading....</p>}
                         {error && error}
-                        {message.length > 0 && <p>{userEmail} is registerd successfully</p>}
+                        {messageRegister.length > 0 && <p>{userEmail} is registerd successfully</p>}
+                        {messageLogin.length > 0 && <p>{userEmail} is Logged-in successfully</p>}
                         <form>
                             {/* email */}
                             <div className='form-group mb-3'>
@@ -42,7 +49,8 @@ const Auth = () => {
                                 <div className='row'>
                                     <div className='col-6'>
                                         <div className='d-grid'>
-                                            <button className='btn btn-primary'>Login</button>
+                                            <button className='btn btn-primary'
+                                                onClick={loginClickHandler}>Login</button>
                                         </div>
                                     </div>
                                     <div className='col-6'>

@@ -52,6 +52,16 @@
       "email": "hi@test",
       "password": "hi123",
       "id": 4
+    },
+    {
+      "email": "abc@test",
+      "password": "abc123",
+      "id": 5
+    },
+    {
+      "email": "baz@test",
+      "password": "baz123",
+      "id": 6
     }
   ]
 }
