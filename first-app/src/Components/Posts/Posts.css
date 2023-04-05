@@ -1,0 +1,7 @@
+.sel-post {
+  transition: all 0.5s ease-in;
+}
+.sel-post:hover {
+  background-color: beige;
+  cursor: pointer;
+}
