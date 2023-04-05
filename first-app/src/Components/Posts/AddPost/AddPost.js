@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
 import axios from 'axios';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const AddPost = () => {
@@ -14,7 +14,7 @@ const AddPost = () => {
             title: titleInputRef.current.value,
             body: bodyInputRef.current.value
         }
-        const response = await axios.post("http://localhost:3030/posts", post, {
+        await axios.post("http://localhost:3030/posts", post, {
             Headers: {
                 "Content-Type": "application/json"
             }

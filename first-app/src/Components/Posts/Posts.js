@@ -1,4 +1,4 @@
-import axios, { isCancel } from 'axios';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
