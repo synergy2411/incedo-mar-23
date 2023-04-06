@@ -13,7 +13,7 @@ const loadNotes = () => {
 const saveNotes = (notes, op) => {
     writeFileSync("./notes.json", JSON.stringify(notes))
     let msg = "";
-    op === 'saved' ? mag = "Saved successfully!!" : msg = "Deleted the item.";
+    op === 'saved' ? msg = "Saved successfully!!" : msg = "Deleted the item.";
     console.log(color.green(msg))
 }
 
