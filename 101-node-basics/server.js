@@ -52,20 +52,60 @@
 // console.log(color.green("Smm : ", sum(2, 4)))
 
 
-const yargs = require("yargs")
+// const yargs = require("yargs")
 
-yargs.command({
-    command: "create",
-    description: "Creating new command",
-    builder: {
-        title: {
-            type: String,
-            demandOption: true
-        }
-    },
-    handler: (args) => {
-        console.log("ARGS : ", args)
-    }
-})
+// yargs.command({
+//     command: "create",
+//     description: "Creating new command",
+//     builder: {
+//         title: {
+//             type: String,
+//             demandOption: true
+//         }
+//     },
+//     handler: (args) => {
+//         console.log("ARGS : ", args)
+//     }
+// })
 
-yargs.parse();
+// yargs.parse();
+
+
+// node server.js --help
+// node server.js create --help
+// node server.js create --title="Some title"
+
+
+
+// setTimeout(() => {
+//     console.log("@ seconds left")
+// }, 2000)
+
+
+// console.log(__dirname);
+// console.log(__filename);
+
+
+// console.log(process)
+
+
+console.log("HEllo");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

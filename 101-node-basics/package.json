@@ -1,10 +1,11 @@
 {
-  "name": "101-node-basics",
+  "name": "sk-node-basics",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "SK",
@@ -12,5 +13,9 @@
   "dependencies": {
     "colors": "^1.4.0",
     "yargs": "^17.7.1"
+  },
+  "devDependencies": {
+    "chalk": "^5.2.0",
+    "nodemon": "^2.0.22"
   }
 }

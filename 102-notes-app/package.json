@@ -1,0 +1,17 @@
+{
+  "name": "sk-notes-app",
+  "version": "1.0.1",
+  "description": "my awesome notes",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "note",
+    "notes-app"
+  ],
+  "author": "SK",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "yargs": "^17.7.1"
+  }
+}

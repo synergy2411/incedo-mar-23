@@ -100,3 +100,20 @@ result : []
 - Node Runtime Environment - REPL
 - Node Package Manager
 - Node Native Modules
+
+# Semantic Versioning (X.Y.Z)
+
+X -> Major Version -> change of code which is NOT backward compatible
+Y -> Minor Version -> change of code which is backward compatible
+Z -> Patch Version -> bug fixes / improvements
+
+1.3.1
+1.4.0
+1.4.1
+2.0.0
+
+> npm adduser
+> npm publish
+> npm config --help
+> npm config set init-author-name="YOUR NAME"
+> npm config list
