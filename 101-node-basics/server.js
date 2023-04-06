@@ -8,15 +8,15 @@
 // console.log("Architecture : ", arch());
 
 
-const { readFile, writeFile } = require("fs")
+// const { readFile, writeFile } = require("fs")
 
-readFile("./example.mp4", function (err, data) {
-    if (err) {
-        console.log(err)
-    }
-    console.log(data)
-    writeFile("./new-filename.mp4", data, () => { })
-})
+// readFile("./example.mp4", function (err, data) {
+//     if (err) {
+//         console.log(err)
+//     }
+//     console.log(data)
+//     writeFile("./new-filename.mp4", data, () => { })
+// })
 
 
 
@@ -27,3 +27,45 @@ readFile("./example.mp4", function (err, data) {
 // writeFileSync("test2.md", content)
 
 
+
+
+
+// const { createServer } = require("http")
+// const { readFileSync } = require("fs")
+
+// const server = createServer((req, res) => {
+//     console.log("URL : ", req.url)
+//     console.log("Method : ", req.method)
+//     const content = readFileSync("./home.html")
+//     res.write(content)
+//     res.end();
+// })
+
+// server.listen(9090, () => console.log("Server started at PORT : 9090"))
+
+
+
+
+// const { sum, mul } = require("./utils/maths")
+// const color = require("colors")
+
+// console.log(color.green("Smm : ", sum(2, 4)))
+
+
+const yargs = require("yargs")
+
+yargs.command({
+    command: "create",
+    description: "Creating new command",
+    builder: {
+        title: {
+            type: String,
+            demandOption: true
+        }
+    },
+    handler: (args) => {
+        console.log("ARGS : ", args)
+    }
+})
+
+yargs.parse();

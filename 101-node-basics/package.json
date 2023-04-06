@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "SK",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "yargs": "^17.7.1"
+  }
 }
