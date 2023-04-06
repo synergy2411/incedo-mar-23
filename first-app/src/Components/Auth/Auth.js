@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom'
-import { userRegister, userLogin } from '../../store/reducers/user-slice';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { userLogin, userRegister } from '../../store/reducers/user-slice';
 
 const Auth = () => {
 
@@ -29,7 +29,6 @@ const Auth = () => {
         event.preventDefault();
         dispatch(userLogin({ email, password }))
         setTimeout(() => {
-
             navigate("/expenses")
         }, 1000)
 
