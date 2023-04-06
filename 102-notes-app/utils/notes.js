@@ -10,9 +10,11 @@ const loadNotes = () => {
         return []
     }
 }
-const saveNotes = (notes) => {
+const saveNotes = (notes, op) => {
     writeFileSync("./notes.json", JSON.stringify(notes))
-    console.log(color.green("Notes Saved"));
+    let msg = "";
+    op === 'saved' ? mag = "Saved successfully!!" : msg = "Deleted the item.";
+    console.log(color.green(msg))
 }
 
 const addNote = (title, body) => {
@@ -21,14 +23,46 @@ const addNote = (title, body) => {
     const position = allNotes.findIndex(note => note.title === title)
     if (position === -1) {
         allNotes.push(newNote);
-        return saveNotes(allNotes)
+        return saveNotes(allNotes, "saved")
     }
     console.log(color.red("Title already exist. Try again!"))
 }
 
-const readNote = () => { }
-const removeNote = () => { }
-const listNotes = () => { }
+const readNote = (title) => {
+    const allNotes = loadNotes();
+    const foundNote = allNotes.find(note => note.title === title)
+    if (foundNote) {
+        console.log(color.blue("--------------"))
+        console.log(color.grey("FOUND NOTE"))
+        console.log(color.blue("--------------"))
+        console.log("Title : ", foundNote.title);
+        console.log("Body : ", foundNote.body);
+        return;
+    }
+    console.log(color.red("Unable to find note for " + title))
+}
+
+const removeNote = (title) => {
+    const allNotes = loadNotes();
+    const position = allNotes.findIndex(note => note.title === title)
+    if (position === -1) {
+        return console.log(color.red("Unable to find for title " + title));
+    }
+    allNotes.splice(position, 1)
+    saveNotes(allNotes);
+}
+
+const listNotes = () => {
+    const allNotes = loadNotes();
+    console.log(color.blue("--------------"))
+    console.log(color.grey("LISTING ALL NOTES"))
+
+    allNotes.forEach(note => {
+        console.log(color.blue("--------------"))
+        console.log("Title : ", note.title);
+        console.log("Body : ", note.body);
+    })
+}
 
 module.exports = {
     addNote,
