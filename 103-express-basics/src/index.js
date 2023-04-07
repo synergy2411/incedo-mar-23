@@ -1,5 +1,7 @@
 const express = require("express");
 const { v4 } = require("uuid");
+const cors = require("cors");
+
 const app = express()
 
 const posts = [
@@ -9,6 +11,8 @@ const posts = [
 ]
 
 app.use(express.json());        // Middleware to parse the request body
+app.use(cors());                // Middleware to allow Cross Origin Resource Sharing
+
 
 app.patch("/posts/:postId", (req, res) => {
     const { postId } = req.params;

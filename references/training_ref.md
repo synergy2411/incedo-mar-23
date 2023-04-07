@@ -1,3 +1,5 @@
+https://forms.office.com/r/tdwTgf4JBX
+
 # Atomic Design in Web World
 
 - Atom : a button, one input field etc
@@ -117,3 +119,11 @@ Z -> Patch Version -> bug fixes / improvements
 > npm config --help
 > npm config set init-author-name="YOUR NAME"
 > npm config list
+
+> npm init -y
+> npm i express cors mongoose
+> npm i nodemon -D
+> Create "start:dev" script in package.json
+> npm run start:dev
+
+- CORS : Cross Origin Resource Sharing

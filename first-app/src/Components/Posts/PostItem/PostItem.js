@@ -9,13 +9,13 @@ const PostItem = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get(`http://localhost:3030/posts/${postId}`)
+        axios.get(`http://localhost:9000/posts/${postId}`)
             .then(response => setPost(response.data))
             .catch(console.error)
     }, [postId])
 
     const deleteClickHandler = async () => {
-        await axios.delete(`http://localhost:3030/posts/${post.id}`);
+        await axios.delete(`http://localhost:9000/posts/${post.id}`);
         navigate("/posts?delete=true")
     }
 
