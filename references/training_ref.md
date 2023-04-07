@@ -127,3 +127,11 @@ Z -> Patch Version -> bug fixes / improvements
 > npm run start:dev
 
 - CORS : Cross Origin Resource Sharing
+
+# REST ENDPOINTS-
+
+- GET -> Fetching all posts -> http://localhost:9090/api/posts
+- GET -> Fetch one post based upon postId -> http://localhost:9090/api/posts/postId
+- POST -> Create the record in Database -> http://localhost:9090/api/posts + REQUEST BODY
+- DELETE -> Delete the post based upon postId -> http://localhost:9090/api/posts/postId
+- PATCH -> update the post based upon the postId -> http://localhost:9090/api/posts/:postId + REQUEST BODY
