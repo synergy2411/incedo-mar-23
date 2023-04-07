@@ -3,7 +3,10 @@ const PostModel = require("../model/post.model");
 const fetchAllPosts = async (req, res) => {
     try {
         const allPosts = await PostModel.find()
-        return res.send(allPosts);
+        const transformedPost = allPosts.map(post => {
+            return { id: post._doc._id, title: post._doc.title, body: post._doc.body }
+        })
+        return res.send(transformedPost);
     } catch (err) {
         return res.send(err)
     }
@@ -26,7 +29,7 @@ const fetchPost = async (req, res) => {
         if (!fetchPost) {
             return res.send({ message: "Unable to find the post" })
         }
-        return res.send(fetchPost)
+        return res.send({ id: fetchPost._doc._id, title: fetchPost._doc.title, body: fetchPost._doc.body })
     } catch (err) {
         return res.send(err)
     }

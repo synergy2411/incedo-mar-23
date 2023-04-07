@@ -15,7 +15,7 @@ const AddPost = () => {
             title: titleInputRef.current.value,
             body: bodyInputRef.current.value
         }
-        await axios.post("http://localhost:9000/posts", post, {
+        await axios.post("http://localhost:9090/api/posts", post, {
             Headers: {
                 "Content-Type": "application/json"
             }

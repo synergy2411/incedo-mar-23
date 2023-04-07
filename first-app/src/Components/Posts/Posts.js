@@ -38,9 +38,10 @@ const Posts = () => {
     const isAscending = query.get("order") === 'asc'
 
     useEffect(() => {
-        axios.get("http://localhost:9000/posts")
+        axios.get("http://localhost:9090/api/posts")
             .then(response => {
                 setPosts(response.data)
+                console.log("RESPONSE : ", response.data)
             }).catch(console.error)
     }, [isDeleted, isAdded])
 
